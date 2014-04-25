@@ -1,0 +1,108 @@
+/* THE BASICS */
+body{
+	background-color: #e3e3e3;
+	font-family: Verdana, Geneva, sans-serif;
+	margin: 0;
+	padding: 0;	
+}
+#header{
+	position: relative;
+	background-image:url('../img/layout/header_image.png');
+	width: 100%;
+	height: 162px;	
+}
+#nav{
+	position: relative;
+	background-image:url('../img/layout/nav_image.png');
+	width: 100%;
+	height: 58px;
+	border-top: 3px solid #ca2200;	
+}
+#wrapper_header{
+	position: relative;
+	width: 1000px;
+	height: 162px;
+	margin: 0 auto;
+	border: 1px solid black;	
+}
+#wrapper_nav{
+	position: relative;
+	width: 1000px;
+	min-height: 58px;
+	margin: 0 auto;
+	border: 1px solid black;	
+}
+#wrapper_content{
+	position: relative;
+	width: 1000px;
+	min-height: 100px;
+	margin: 0 auto;
+	border: 1px solid black;
+	margin-top: 40px;	
+}
+/* ########################*/
+/* FORM */
+input[type="text"]{
+	background-color: #ededed;
+	padding: 5px;
+	color: #a1a1a1;
+	font-size: 12px;
+	border: 1px solid #e3e3e3;
+	border-radius: 1px;
+	height: 25px;
+	width: 45%;
+}
+input[type="text"]:focus{
+	outline: none
+}
+/* ########################*/
+/* HEADER */
+#header_column{
+	position: absolute;
+	background-color: #ca2200;
+	width: 185px;
+	height: 36px;
+	bottom: 0px;
+	right: 0px;
+}
+
+/* ########################*/
+/* NAV */
+
+/* ########################*/
+/* CONTENT */
+.frame{
+	position: relative;
+	background-color: #FFF;
+	min-height: 50px;	
+}
+.location{
+	width: 575px;	
+}
+.frame .infotop{
+	position: relative;
+	background-color: #b31f00;
+	width: 100%;
+	height: 50px;
+	padding: 15px 0 0 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;	
+	color: #FFF;
+	font-size: 11pt;
+}
+.frame .contentarea{
+	position: relative;
+	padding: 10px;
+	width: 100%;
+	height: 100%;	
+}
+.frame .contentarea p{
+	color: #a1a1a1;
+	font-size: 14px;
+	-webkit-margin-before: 16px;;
+	-webkit-margin-after: 21px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+/* ########################*/
+/* MEDIAQUERIES */

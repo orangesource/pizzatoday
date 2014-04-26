@@ -23,21 +23,21 @@ body{
 	width: 1000px;
 	height: 162px;
 	margin: 0 auto;
-	border: 1px solid black;	
+	 	
 }
 #wrapper_nav{
 	position: relative;
 	width: 1000px;
 	min-height: 58px;
 	margin: 0 auto;
-	border: 1px solid black;	
+	 	
 }
 #wrapper_content{
 	position: relative;
 	width: 1000px;
 	min-height: 100px;
 	margin: 0 auto;
-	border: 1px solid black;
+	 
 	margin-top: 40px;	
 }
 /* ########################*/
@@ -68,6 +68,24 @@ input[type="text"]:focus{
 
 /* ########################*/
 /* NAV */
+.menuitem{
+	position: relative;
+	min-width: 10px;
+	height: 60px;
+	padding: 18px;
+	float: left;
+	color: white;
+	font-size: 17px;
+	box-sizing: border-box;
+}
+.menuactive{
+	background: #ca2200;
+	height: 55px;
+}
+.menuitem a{
+	color: #FFF;
+	text-decoration: none;	
+}
 
 /* ########################*/
 /* CONTENT */

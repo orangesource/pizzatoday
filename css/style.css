@@ -52,6 +52,16 @@ input[type="text"]{
 	height: 25px;
 	width: 45%;
 }
+input[type="submit"]{
+	background-color: #aa1e01;
+	padding: 5px;
+	margin-left: 10px;
+	color: #fff;
+	font-size: 15px;
+	height: 36px;
+	min-width: 137px;
+	border: 0;
+}
 input[type="text"]:focus{
 	outline: none
 }
@@ -79,6 +89,10 @@ input[type="text"]:focus{
 	box-sizing: border-box;
 }
 .menuactive{
+	background: #ca2200;
+	height: 55px;
+}
+.menuitem:hover{
 	background: #ca2200;
 	height: 55px;
 }

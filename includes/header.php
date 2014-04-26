@@ -2,8 +2,14 @@
 error_reporting(E_ALL);
 include("classes/classloader.php");
 
-//Laad alle classes in die in de directory classes staan
+//Laad classe in
+autoLoadClasses("siteclass");
 
+//Defineer de classes
+$siteFunctions = new siteFunctions;
+
+//Pagina's in de NAV
+$pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
 
 ?>
 <!doctype html>
@@ -11,34 +17,25 @@ include("classes/classloader.php");
 <head>
 <link type='text/css' href='css/style.css' rel='stylesheet'>
 <meta charset="utf-8">
-<title>Naamloos document</title>
+<title><?php echo $siteFunctions->sitetitle();?></title>
 </head>
 
 <body>
 <div id='header'>
 	<div id='wrapper_header'>
     	<div id='header_column'>
-        	<?php 
-				autoLoadClasses("checkForm");
-				
-				$form = new checkForm();
-				
-				if($form->checkUsername("Johannie") == true){
-					echo "Ja";	
-				}
-			?>
+        	
         </div>
     </div>
 </div>
 <div id='nav'>
 	<div id='wrapper_nav'>
-    	<div class='menuitem menuactive'>HOME</div>
-        <div class='menuitem'>WINKELS</div>
-        <div class='menuitem'>PIZZA'S</div>
-        <div class='menuitem'>OVERIGE PRODUCTEN</div>
+    	<?php
+			$i = 1;
+			foreach($pages as $data)
+			{
+				echo "<div class='menuitem id".$i++."'><a href=''>".$data."</a></div>";
+			}
+		?>
 	</div>
 </div>
-
-<?php
-	
-?>

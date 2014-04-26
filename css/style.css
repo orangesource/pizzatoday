@@ -65,6 +65,17 @@ input[type="submit"]{
 input[type="text"]:focus{
 	outline: none
 }
+keygen, select, select[size="0"], select[size="1"] {
+	background-color: #ededed;
+	margin-top: 10px;
+	height: 37px;
+	padding: 5px;
+	box-sizing: border-box;
+	color: #a3a3a3;
+	-moz-box-sizing: border-box;
+	border-radius: 1px;
+	border-color: rgb(169, 169, 169);
+}
 /* ########################*/
 /* HEADER */
 #header_column{
@@ -135,6 +146,36 @@ input[type="text"]:focus{
 	-webkit-margin-after: 21px;
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
+}
+.twocolumnarea{
+	position: relative;
+	width: 45%;
+	float: left;	
+	background: #000;
+	margin-right: 30px;
+	overflow: hidden;
+}
+/* ########################*/
+/* CLEARFIX */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
 }
 /* ########################*/
 /* MEDIAQUERIES */

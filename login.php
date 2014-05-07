@@ -1,3 +1,6 @@
+<?php 
+	include_once("includes/header.php");
+?>
 <script type='text/javascript'>
 $( document ).ready(function() {		
 	$('#login').submit(function (e) {
@@ -26,13 +29,12 @@ $( document ).ready(function() {
 			}
 		}
 	});
+	
 	return false;
 	});
 });
 </script>
-<?php 
-	include_once("includes/header.php");
-?>
+
 <div id='wrapper_content'>
     <div class='twocolumnarea'>
 		<div class='frame location'>
@@ -41,9 +43,10 @@ $( document ).ready(function() {
             </div>
             <div class='contentarea'>
                 <div id='msg'></div>
-                <form method='post' action="check_login.php">
+                <form method='post' action="ajax/check_login.php" id="login">
                		<input type='text' name='email' placeholder="E-Mail"><br/>
-                    <input type='password' name='pass' placeholder="Wachtwoord"><br/><input type='submit' name='login' id='login' value='LOGIN'>
+                    <input type='password' name='pass' placeholder="Wachtwoord"><br/>
+                    <input type='submit' name='login' value='LOGIN'>
                 </form>
             </div>
         </div>

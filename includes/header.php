@@ -1,9 +1,11 @@
 <?php
 error_reporting(E_ALL);
 include("classes/classloader.php");
+include("thedbconnect/connect.php");
 
 //Laad classe in
 autoLoadClasses("siteclass");
+autoLoadClasses("databaseclass");
 
 //Defineer de classes
 $siteFunctions = new siteFunctions;

@@ -5,6 +5,5 @@ function autoLoadClasses($className) {
         require $filename;
     }
 }
- 
 spl_autoload_register("autoLoadClasses");	
 ?>

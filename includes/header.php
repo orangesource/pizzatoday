@@ -1,17 +1,26 @@
 <?php
 error_reporting(E_ALL);
+session_start();
+ob_start();
+
+//Include belangrijke bestanden **Zonder deze werkt de site niet**
 include("classes/classloader.php");
-include("thedbconnect/connect.php");
+include("config/config.php");
 
 //Laad classe in
-autoLoadClasses("siteclass");
 autoLoadClasses("databaseclass");
+autoLoadClasses("siteclass");
+autoLoadClasses("formclass");
 
 //Defineer de classes
 $siteFunctions = new siteFunctions;
+$checkForm = new checkForm;
+
+//Roep het database op
+$db = new database(_HOST, _DB, _USER, _PASS);
 
 //Pagina's in de NAV
-$pages = array("HOME","WINKELS", "PIZZA'S", "CONTACT");
+$pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
 
 ?>
 <!doctype html>

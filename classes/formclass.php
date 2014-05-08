@@ -1,26 +1,24 @@
 <?php
 class checkForm extends database{
 	
-	public $username;
+	public $user;
 	public $password;
-	public $db;
-	public $getDB;
+	public $getDB;	
 	
 	public function __construct()
 	{
-		$dbh = new database;
-		$db = $dbh->getDB();
+		
 	}
 	
-	public function setUserdata($username, $password)
+	public function setUserdata($user, $password)
 	{
-		$this->username = $username;
+		$this->user = $user;
 		$this->password = $password;	
 	}
 	
 	public function notEmpty()
 	{
-		if($this->username == "" OR empty($this->username))
+		if($this->user == "" OR empty($this->user))
 		{
 			return false;	
 		}else{
@@ -39,10 +37,8 @@ class checkForm extends database{
 	
 	public function emailExist()
 	{	
-		$db = new database();
-		$getDB = $db->getDB();
-		
-		$stmt = $getDB->query("SELECT `email` FROM `cms_users` WHERE `email`='".trim($this->username)."'");
+		$db = $this->getDB();
+		$stmt = $this->db->query("SELECT `email` FROM `cms_users` WHERE `email`='".trim($this->user)."'");
 		if($stmt->rowCount() > 0){
 			return true;	
 		}else{

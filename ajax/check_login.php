@@ -1,10 +1,11 @@
 <?php
 //Haal de juiste classe op
+require "../config/config.php";
 require "../classes/databaseclass.php";
 require "../classes/formclass.php";
 
-$checkForm = new checkForm;
-$db = new database;
+$db = new database(_HOST, _DB, _USER, _PASS);
+
 
 $checkForm->setUserdata($_POST['email'], $_POST['pass']);
 

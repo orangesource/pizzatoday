@@ -1,5 +1,7 @@
 <?php 
 	include_once("includes/header.php");
+	$data = $db->query("SELECT `email` FROM `cms_users`");
+	print_r($data);
 ?>
 <script type='text/javascript'>
 $( document ).ready(function() {		

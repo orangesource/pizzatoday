@@ -33,7 +33,7 @@
 					<form action="" method="POST" class="product_acties">
 						<input type="text" name="aantal" value="2" placeholder="1">
 						<input type="submit" name="favorite" value="1" class="active">
-						<input type="submit" name="cart" value="1" class="active">
+						<input type="submit" name="cart" value="toevoegen" class="active">
 					</form>
 				</div>
 
@@ -44,9 +44,9 @@
 					</div>
 					<p class="product_title">Pizza quatro</p>
 					<form action="" method="POST" class="product_acties">
-						<input type="text" name="aantal" value="2" placeholder="1">
+						<input type="text" name="aantal" value="" placeholder="1">
 						<input type="submit" name="favorite" value="1" class="">
-						<input type="submit" name="cart" value="1">
+						<input type="submit" name="cart" value="toevoegen">
 					</form>
 				</div>
 
@@ -57,9 +57,9 @@
 					</div>
 					<p class="product_title">Pizza quatro</p>
 					<form action="" method="POST" class="product_acties">
-						<input type="text" name="aantal" value="2" placeholder="1">
+						<input type="text" name="aantal" value="" placeholder="1">
 						<input type="submit" name="favorite" value="1" class="">
-						<input type="submit" name="cart" value="1">
+						<input type="submit" name="cart" value="toevoegen">
 					</form>
 				</div>
 
@@ -70,9 +70,9 @@
 					</div>
 					<p class="product_title">Pizza quatro</p>
 					<form action="" method="POST" class="product_acties">
-						<input type="text" name="aantal" value="2" placeholder="1">
+						<input type="text" name="aantal" value="" placeholder="1">
 						<input type="submit" name="favorite" value="1" class="active">
-						<input type="submit" name="cart" value="1">
+						<input type="submit" name="cart" value="toevoegen">
 					</form>
 				</div>
 
@@ -83,9 +83,9 @@
 					</div>
 					<p class="product_title">Pizza quatro</p>
 					<form action="" method="POST" class="product_acties">
-						<input type="text" name="aantal" value="2" placeholder="1">
+						<input type="text" name="aantal" value="" placeholder="1">
 						<input type="submit" name="favorite" value="1" class="">
-						<input type="submit" name="cart" value="1">
+						<input type="submit" name="cart" value="toevoegen">
 					</form>
 				</div>
 
@@ -96,9 +96,9 @@
 					</div>
 					<p class="product_title">Pizza quatro</p>
 					<form action="" method="POST" class="product_acties">
-						<input type="text" name="aantal" value="2" placeholder="1">
+						<input type="text" name="aantal" value="" placeholder="1">
 						<input type="submit" name="favorite" value="1" class="">
-						<input type="submit" name="cart" value="1">
+						<input type="submit" name="cart" value="toevoegen">
 					</form>
 				</div>
 

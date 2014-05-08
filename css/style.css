@@ -105,10 +105,41 @@ keygen, select, select[size="0"], select[size="1"] {
 #header_column{
 	position: absolute;
 	background-color: #ca2200;
-	width: 185px;
-	height: 36px;
+	width: 195px;
+	height: 16px;
 	bottom: 0px;
 	right: 0px;
+	padding: 13px 10px;
+}
+
+a.login{
+	font-size: 13px;
+	color: #ffffff;
+}
+
+a.login:hover{
+	text-decoration: underline;
+}
+
+.vertical_divider{
+	width: 1px;
+	background-color: #981a00;
+	height: 30px;
+	border-right: 1px solid #d22400;
+	margin-left: 115px;
+	margin-top: -22px;
+}
+
+p.tot_amount{
+
+    font-size: 15px;  color: #ffffff;
+
+
+    margin-left: 128px;
+
+
+    margin-top: -25px;
+
 }
 
 /* ########################*/
@@ -279,7 +310,8 @@ keygen, select, select[size="0"], select[size="1"] {
 }
 
 input[name="aantal"] {
-	width: 27px;
+	width: 21px;
+	height: 21px;
 	float: left;
 	text-align: center;
 	background: #ffffff;
@@ -291,12 +323,12 @@ input[name="aantal"] {
 }
 
 input[name="favorite"] {
-	width: 35px;
-	height: 34px;
+	width: 30px;
+	height: 30px;
 	margin-top: 7px;
 	margin-right: 5px;
 	border: none !important;
-	background: url("../img/favorite.png") no-repeat scroll 5px 3px transparent;
+	background: url("../img/favorite.png") no-repeat scroll 4px 3px transparent;
 	background-color: #8d8d8d;
 	background-size: 79%;
 	color: transparent;
@@ -304,8 +336,8 @@ input[name="favorite"] {
 }
 
 input[name="cart"] {
-	width: 35px;
-	height: 34px;
+	width: 30px;
+	height: 30px;
 	margin-top: 7px;
 	margin-right: 5px;
 	border: none !important;
@@ -345,6 +377,7 @@ form.product_acties{
 
 .clearfix {
     display: inline-block;
+    width: 100%;
 }
 
 html[xmlns] .clearfix {

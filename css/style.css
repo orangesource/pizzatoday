@@ -1,44 +1,49 @@
+/* DEFAULT */
+a { cursor: pointer; }
+
+li { list-style: none; margin:0px; padding:0px;}
+
 /* THE BASICS */
 body{
 	background-color: #e3e3e3;
 	font-family: Verdana, Geneva, sans-serif;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 #header{
 	position: relative;
 	background-image:url('../img/layout/header_image.png');
 	width: 100%;
-	height: 162px;	
+	height: 162px;
 }
 #nav{
 	position: relative;
 	background-image:url('../img/layout/nav_image.png');
 	width: 100%;
 	height: 58px;
-	border-top: 3px solid #ca2200;	
+	border-top: 3px solid #ca2200;
 }
 #wrapper_header{
 	position: relative;
 	width: 1000px;
 	height: 162px;
 	margin: 0 auto;
-	 	
+
 }
 #wrapper_nav{
 	position: relative;
 	width: 1000px;
 	min-height: 58px;
 	margin: 0 auto;
-	 	
+
 }
 #wrapper_content{
 	position: relative;
 	width: 1000px;
 	min-height: 100px;
 	margin: 0 auto;
-	 
-	margin-top: 40px;	
+	overflow: auto;
+	margin-top: 40px;
 }
 /* ########################*/
 /* FORM */
@@ -53,15 +58,33 @@ input[type="text"], input[type="password"]{
 	width: 45%;
 	margin-bottom: 10px;
 }
+
 input[type="submit"]{
 	background-color: #aa1e01;
 	padding: 5px;
 	color: #fff;
 	font-size: 15px;
 	height: 36px;
-	min-width: 137px;
+	width: 137px;
 	border: 0;
 }
+
+/***************************************/
+/* Form pizza zoeken/bestellen */
+input[name="searchtagg"] {
+	margin-right: 23px;
+	width: 375px;
+}
+
+select[name="categorie"] {
+	width: 155px;
+	margin-right: 19px;
+}
+
+input[name="searchname"] {
+	width: 307px;
+}
+
 input[type="text"]:focus{
 	outline: none
 }
@@ -69,12 +92,13 @@ keygen, select, select[size="0"], select[size="1"] {
 	background-color: #ededed;
 	margin-top: 10px;
 	height: 37px;
+	font-size: 18px;
 	padding: 5px;
 	box-sizing: border-box;
 	color: #a3a3a3;
 	-moz-box-sizing: border-box;
 	border-radius: 1px;
-	border-color: rgb(169, 169, 169);
+	border-color: #e3e3e3;
 }
 /* ########################*/
 /* HEADER */
@@ -109,7 +133,7 @@ keygen, select, select[size="0"], select[size="1"] {
 }
 .menuitem a{
 	color: #FFF;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 /* ########################*/
@@ -117,44 +141,197 @@ keygen, select, select[size="0"], select[size="1"] {
 .frame{
 	position: relative;
 	background-color: #FFF;
-	min-height: 50px;	
+	min-height: 50px;
 }
 .location{
-	width: 575px;	
+	/*width: 575px;*/
 }
-.frame .infotop{
+.infotop{
 	position: relative;
 	background-color: #b31f00;
 	width: 100%;
 	height: 50px;
-	padding: 15px 0 0 5px;
+	padding: 15px 0 0 15px;
 	box-sizing: border-box;
-	-moz-box-sizing: border-box;	
+	-moz-box-sizing: border-box;
 	color: #FFF;
 	font-size: 11pt;
 }
 .frame .contentarea{
 	position: relative;
-	padding: 10px;
-	width: 100%;
-	height: 100%;	
+	padding: 10px 0 0 15px;
+	/* width: 100%; */
+	height: 100%;
+	min-height: 120px;
 }
 .frame .contentarea p{
 	color: #a1a1a1;
-	font-size: 14px;
-	-webkit-margin-before: 16px;;
-	-webkit-margin-after: 21px;
-	-webkit-margin-start: 0px;
-	-webkit-margin-end: 0px;
+	line-height: 1.8;
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 5px;
+	/* -webkit-margin-before: 16px; */;
+	/* -webkit-margin-after: 21px; */
+	/* -webkit-margin-start: 0px; */
+	/* -webkit-margin-end: 0px; */
 }
 .twocolumnarea{
 	position: relative;
-	width: 45%;
-	float: left;	
+	float: left;
 	background: #000;
-	margin-right: 30px;
-	overflow: hidden;
 }
+
+/* pizza bestellen/product zoeken */
+.pizza_bestellen{
+	width: 575px;
+	margin-right: 80px;
+}
+.product_zoeken{
+	width:345px;
+}
+
+/****** sidebar *****/
+.sidebar{
+	width: 200px;
+	overflow: auto;
+	float:left;
+	margin-right: 60px;
+}
+
+.sidebar .content{
+	background: #ffffff;
+	height: 100%;
+	min-height: 600px;
+}
+
+.sidebar li.cat_title{
+    color: #aa1e01;
+    text-transform: uppercase;
+    padding: 15px 0 15px 15px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.sidebar li.product_title{
+    color: #000000;
+    padding: 15px 0 15px 15px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.sidebar li.product_title:hover{
+    padding: 15px 0 15px 11px;
+    border-left:4px solid #aa1e01;
+    border-bottom: 1px solid #dfdfdf;
+}
+/****** Product overzicht *****/
+.product_overzicht{
+	width: 740px;
+	overflow: auto;
+	float:left;
+}
+
+.product_overzicht .content{
+	background: #ffffff;
+	height: 100%;
+	min-height: 600px;
+	padding: 20px 0 20px 20px;
+}
+
+.product_overzicht .content .product{
+	width: 200px;
+	height: 190px;
+	background: #e3e3e3;
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.product_img{
+	width: 200px;
+	height: 100px;
+	background: #ffffff;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.product p.price{
+	background: #e3e3e3;
+	padding: 15px 8px;
+	color:#000000;
+	position: absolute;
+	right: 0;
+	top: -14px;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 7px;
+}
+
+.product p.product_title{
+	font-size: 14px;
+	color: #aa1e01;
+	float: left;
+	width:100%;
+}
+
+input[name="aantal"] {
+	width: 27px;
+	float: left;
+	text-align: center;
+	background: #ffffff;
+	font-size: 14px;
+	color: #aa1e01;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+input[name="favorite"] {
+	width: 35px;
+	height: 34px;
+	margin-top: 7px;
+	margin-right: 5px;
+	border: none !important;
+	background: url("../img/favorite.png") no-repeat scroll 5px 3px transparent;
+	background-color: #8d8d8d;
+	background-size: 79%;
+	color: transparent;
+	cursor: pointer;
+}
+
+input[name="cart"] {
+	width: 35px;
+	height: 34px;
+	margin-top: 7px;
+	margin-right: 5px;
+	border: none !important;
+	background: url("../img/cart.png") no-repeat scroll 6px 9px transparent;
+	background-color: #8d8d8d;
+	background-size: 59%;
+	color: transparent;
+	cursor: pointer;
+}
+
+input[name="favorite"]:hover, input[name="cart"]:hover  {
+    background-color: #aa1e01;
+}
+
+input[name="favorite"].active, input[name="cart"].active  {
+    background-color: #aa1e01;
+}
+
+form.product_acties{
+	height: 53px;
+	float: left;
+	margin-top: -11px;
+	margin-left: -6px;
+}
+
+
 /* ########################*/
 /* CLEARFIX */
 .clearfix:after {
@@ -165,15 +342,15 @@ keygen, select, select[size="0"], select[size="1"] {
     line-height: 0;
     height: 0;
 }
- 
+
 .clearfix {
     display: inline-block;
 }
- 
+
 html[xmlns] .clearfix {
     display: block;
 }
- 
+
 * html .clearfix {
     height: 1%;
 }

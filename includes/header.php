@@ -12,12 +12,16 @@ autoLoadClasses("databaseclass");
 autoLoadClasses("siteclass");
 autoLoadClasses("formclass");
 
+//Roep het database op
+$db = new database();
+$db->startConnect(_HOST, _DB, _USER, _PASS);
+
 //Defineer de classes
 $siteFunctions = new siteFunctions;
-$checkForm = new checkForm;
+$checkForm = new checkForm($db);
 
-//Roep het database op
-$db = new database(_HOST, _DB, _USER, _PASS);
+//$test=$db->dbInfo()->query("SELECT * FROM `cms_users`");
+//print_r($test);
 
 //Pagina's in de NAV
 $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
@@ -27,6 +31,7 @@ $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
 <html>
 <head>
 <link type='text/css' href='css/style.css' rel='stylesheet'>
+<script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
 <meta charset="utf-8">
 <title><?php echo $siteFunctions->sitetitle();?></title>
 </head>

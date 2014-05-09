@@ -1,6 +1,9 @@
 <?php 
 	include_once("includes/header.php");
-	$data = $db->query("SELECT `email` FROM `cms_users`");
+	
+	//var_dump( $checkForm->checkEmail("MrYannickz@live.nl"));
+	
+	$data = $db->query("SELECT * FROM `cms_users`");
 	print_r($data);
 ?>
 <script type='text/javascript'>

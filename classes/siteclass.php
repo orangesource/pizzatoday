@@ -2,34 +2,34 @@
  	class siteFunctions
 	{
 		protected $active;
-		
+
 		public function sitetitle()
 		{
-			return "Pizzatoday";	
+			return "Pizzatoday";
 		}
-		
-		function curPageName() 
+
+		function curPageName()
 		{
 			 return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 		}
-			
+
 		public function menuActive()
 		{
 			$active = curPageName();
-			
+
 		}
-		
+
 		public function storeLocator($title, $information, $submit, $inputname)
 		{
 			if($information == ""){
 				$information = "Vul hier je woonplaats in";
 			}
 			if($title == ""){
-				$title = "StoreLocator";	
+				$title = "StoreLocator";
 			}
-			
-		
-			
+
+
+
 			if(isset($_POST[$submit])){
 				if(!empty($_POST[$inputname]) && $_POST[$inputname] != ""){
 					header("Location: search.php?c=stores&s=".$_POST[$inputname]."");
@@ -40,14 +40,14 @@
 							".$title."
 						</div>
 						<div class='contentarea'>
-							<p><font style='color: red; font-weight: bold;'>U moet een geldige zoekterm opgeven!</font></p>
+							<p class='melding'>U moet een geldige zoekterm opgeven!</p>
 							<p>".$information."</p>
-							<form method='post'>
+							<form method='post' style='padding-bottom:10px;'>
 							<input type='text' name='".$inputname."'><input type='submit' name='".$submit."' value='ZOEKEN'>
 							</form>
 						</div>
 					</div>
-				";	
+				";
 				}
 			}else{
 				return "
@@ -64,9 +64,9 @@
 				</div>
 			";
 			}
-			
-			
-			
+
+
+
 		}
 		public function search($title, $information, $submit, $inputname, $selectname)
 		{
@@ -74,11 +74,11 @@
 				$information = "";
 			}
 			if($title == ""){
-				$title = "";	
+				$title = "";
 			}
 			$returnthis = "";
 			$categorien = array("Pizza", "Pasta", "Salades", "Deserts", "Drinks");
-				
+
 			if(isset($_POST[$submit])){
 				if(!empty($_POST[$inputname]) && $_POST[$inputname] != ""){
 					if(in_array($categorie, $selectname)){
@@ -91,9 +91,9 @@
 							".$title."
 						</div>
 						<div class='contentarea'>
-							<p><font style='color: red; font-weight: bold;'>U moet een geldige zoekterm opgeven!</font></p>
+							<p class='melding'>U moet een geldige zoekterm opgeven!</p>
 							<p>".$information."</p>
-							<form method='post'>
+							<form method='post' style='padding-bottom:10px;'>
 							<input type='text' name='".$inputname."'><br/>
 							<select name='".$selectname."'>";
 					$i = 1;
@@ -106,7 +106,7 @@
 						</div>
 					</div>";
 			return $returnthis;
-					
+
 				}
 			}else{
 				$returnthis .= "
@@ -128,13 +128,10 @@
 							</form>
 						</div>
 					</div>";
-					
+
 			return $returnthis;
 			}
-			
-			
-			
 		}
-			
+
 	}
 ?>

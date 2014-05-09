@@ -1,26 +1,38 @@
 <?php
 class checkForm extends database{
 	
-	public $username;
+	public $user;
 	public $password;
-	public $db;
-	public $getDB;
+	public $database;
+	public $count;
+	protected $thepassword;
 	
-	public function __construct()
+	public function __construct($db)
 	{
-		$dbh = new database;
-		$db = $dbh->getDB();
+		$this->database = $db;
+		
 	}
 	
-	public function setUserdata($username, $password)
+	public function setUserdata($user, $password)
 	{
-		$this->username = $username;
+		$this->user = $user;
 		$this->password = $password;	
 	}
 	
-	public function notEmpty()
+	public function userNotEmpty()
 	{
-		if($this->username == "" OR empty($this->username))
+ 
+		if($this->user == "" OR empty($this->user))
+		{
+			return false;	
+		}else{
+			return true;	
+		}
+	}
+	
+	public function passNotEmpty()
+	{
+		if($this->password == "" OR empty($this->password))
 		{
 			return false;	
 		}else{
@@ -30,25 +42,36 @@ class checkForm extends database{
 	
 	public function allowedEmail()
 	{
-		if(filter_var($this->username, FILTER_VALIDATE_EMAIL) == true){
+		if(filter_var($this->user, FILTER_VALIDATE_EMAIL) == true){
 			return true;
 		}else{
 			return false;	
 		}
 	}
 	
-	public function emailExist()
-	{	
-		$db = new database();
-		$getDB = $db->getDB();
+	public function checkEmail()
+	{
 		
-		$stmt = $getDB->query("SELECT `email` FROM `cms_users` WHERE `email`='".trim($this->username)."'");
-		if($stmt->rowCount() > 0){
+		$sth = $this->database->query("SELECT `email` FROM `cms_users` WHERE `email`='".$this->user."'");
+		
+		if($sth == ""){
+			return false;	
+		}else{
+			return true;	
+		}
+	}
+	
+	public function checkPass()
+	{
+		$sth = $this->database->query("SELECT `password` FROM `cms_users` WHERE `email`='".$this->user."'");
+		
+		$thepassword = sha1($this->password);
+		
+		if($thepassword == $sth->password){
 			return true;	
 		}else{
 			return false;	
 		}
 	}
-	
 }
 ?>

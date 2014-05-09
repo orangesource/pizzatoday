@@ -1,7 +1,25 @@
 /* DEFAULT */
-a { cursor: pointer; }
+a { cursor: pointer; color:#ffffff; text-decoration: none;}
 
 li { list-style: none; margin:0px; padding:0px;}
+
+p.melding{
+	color:red !important;
+	font-size: 14px !important;
+	line-height: 1 !important;
+}
+
+.underline { border-bottom: 1px solid #a1a1a1;}
+
+.mb20 {margin-bottom: 20px;}
+
+.w90 {width: 90px !important;}
+
+.tr {text-align: right;}
+
+.tl {text-align: left;}
+
+
 
 /* THE BASICS */
 body{
@@ -131,15 +149,9 @@ a.login:hover{
 }
 
 p.tot_amount{
-
     font-size: 15px;  color: #ffffff;
-
-
     margin-left: 128px;
-
-
     margin-top: -25px;
-
 }
 
 /* ########################*/
@@ -167,6 +179,179 @@ p.tot_amount{
 	text-decoration: none;
 }
 
+/************************************************
+FAVORITE MENU*/
+
+ul.favorite_menu{
+	width: 14px;
+	height: 55px;
+	margin-top: 0px;
+	float:right;
+	background: url("../img/favorite.png") no-repeat scroll 6px 4px transparent;
+	background-size: 80%;
+	border-left:1px solid #d22400;
+}
+
+ul.favorite_menu:hover{
+	background-color: #9c1a00;
+}
+
+.favorite_info{
+	width: 300px;
+	height: auto;
+	overflow: auto;
+	background: #9c1a00;
+	position: absolute;
+	right: 0;
+	padding-top: 10px;
+	top: 55px;
+	z-index: 9;
+	display:none;
+}
+
+
+.trigger_favo:hover .favorite_info{
+	display: block;
+	z-index: 1;
+}
+
+.favorite_info .product_info {
+	width: 270px;
+	margin: 10px auto;
+	border-bottom: 1px solid #b71f00;
+	border-width: 1px;
+	position: relative;
+}
+
+p.favorite_all{
+    font-size: 11px;
+    color: #ffffff;
+    float: right;
+    margin-right: 20px;
+    margin-top: 3px;
+}
+
+p.total_amount{
+	color: #ffffff;
+	margin-left: 215px;
+}
+
+p.favorite_all:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a.delete_favorite{
+    position: absolute;
+    right: 6px;
+    top: 0;
+    color: #ffffff;
+}
+
+img.product_thumb {
+	height: 40px;
+	float: left;
+	margin-right: 10px;
+}
+
+p.fav_title {
+	color: #ffffff;
+	margin-top: 0px;
+	width: 62%;
+	overflow: auto;
+}
+
+p.fav_title:hover{
+	text-decoration: underline;
+}
+
+p.fav_price {
+	width: 100%;
+	margin-top: -13px;
+	color: #ffffff;
+}
+
+/***************************************************
+CART MENU*/
+
+ul.cart_menu{
+	width: 14px;
+	height: 55px;
+	float:right;
+	margin-top:0px;
+	background: url("../img/cart.png") no-repeat scroll 15px 18px transparent;
+	background-size: 55%;
+	border-right:1px solid #981a00;
+}
+
+.cart_menu:hover{
+	background-color: #9c1a00;
+}
+
+.trigger_cart:hover .cart_info{
+	display: block;
+}
+
+.cart_info{
+	width: 300px;
+	height: auto;
+	overflow: auto;
+	background: #9c1a00;
+	position: absolute;
+	right: 56px;
+	padding-top: 10px;
+	top: 55px;
+	z-index: 9;
+	display:none;
+}
+
+.cart_info .product_info {
+	width: 270px;
+	margin: 10px auto;
+	border-bottom: 1px solid #b71f00;
+	border-width: 1px;
+	position: relative;
+}
+
+p.favorites{
+	font-size: 12px;
+	margin-left: -17px;
+	margin-top:20px;
+	font-weight: bold;
+	color: #9c1a00;
+	cursor: context-menu;
+}
+
+p.cart_all{
+    font-size: 11px;
+    color: #ffffff;
+    float: right;
+    margin-right: 20px;
+    margin-top: 3px;
+}
+
+p.cart_all:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+p.cart_amount{
+	font-size: 11px;
+	margin-left: -10px;
+	margin-top: 8px;
+	text-align: center;
+	font-weight: bold;
+	color: #9c1a00;
+	background: white;
+	width: 14px;
+	padding: 1px;
+	border-radius: 8px;
+	height: 14px;
+	cursor: context-menu;
+}
+
+
+
 /* ########################*/
 /* CONTENT */
 .frame{
@@ -192,8 +377,8 @@ p.tot_amount{
 	position: relative;
 	padding: 10px 0 0 15px;
 	/* width: 100%; */
-	height: 100%;
-	min-height: 120px;
+	 height: 100%;
+	 min-height: 130px;
 }
 .frame .contentarea p{
 	color: #a1a1a1;
@@ -236,16 +421,22 @@ p.tot_amount{
 }
 
 .sidebar li.cat_title{
-    color: #aa1e01;
-    text-transform: uppercase;
     padding: 15px 0 15px 15px;
     border-bottom: 1px solid #dfdfdf;
 }
 
+.sidebar li.cat_title a{
+	color: #aa1e01;
+    text-transform: uppercase;
+}
+
 .sidebar li.product_title{
-    color: #000000;
     padding: 15px 0 15px 15px;
     border-bottom: 1px solid #dfdfdf;
+}
+
+.sidebar li.product_title a{
+    color: #000000;
 }
 
 .sidebar li.product_title:hover{
@@ -336,19 +527,35 @@ input[name="favorite"] {
 }
 
 input[name="cart"] {
-	width: 30px;
+	width: 117px;
+	height: 30px;
+	margin-top: 7px;
+	border: none !important;
+	background: url("../img/cart.png") no-repeat scroll 7px 6px transparent;
+	background-color: #8d8d8d;
+	background-size: 20%;
+	/* color: transparent; */
+	padding-bottom: 6px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+input[name="cart"].active{
+	width: 35px;
 	height: 30px;
 	margin-top: 7px;
 	margin-right: 5px;
 	border: none !important;
-	background: url("../img/cart.png") no-repeat scroll 6px 9px transparent;
+	background: url("../img/cart.png") no-repeat scroll 7px 6px transparent;
 	background-color: #8d8d8d;
-	background-size: 59%;
+	background-size: 60%;
 	color: transparent;
 	cursor: pointer;
+
 }
 
-input[name="favorite"]:hover, input[name="cart"]:hover  {
+
+input[name="favorite"]:hover, input[name="cart"]:hover {
     background-color: #aa1e01;
 }
 
@@ -362,6 +569,208 @@ form.product_acties{
 	margin-top: -11px;
 	margin-left: -6px;
 }
+
+
+/**********************************************
+FILIAAL ZOEKEN*/
+
+.filiaal_zoeken{
+	overflow: auto;
+	float:left;
+}
+
+.filiaal_zoeken .content{
+	background: #ffffff;
+	min-height: 115px;
+	padding: 10px;
+}
+
+input[name="filiaal_invoer"]{
+   width:95%;
+}
+
+/**********************************************
+FILIAAL INFO*/
+
+.filiaal_info{
+	overflow: auto;
+	float: left;
+	width: 628px;
+	margin-left: 70px;
+}
+
+.filiaal_info .content{
+	background: #ffffff;
+	height: 100%;
+	min-height: 115px;
+	padding: 0 10px 0 10px;
+}
+
+
+.filiaal_info .content .filiaal{
+	width:100%;
+	height: auto;
+	overflow: auto;
+	position: relative;
+	border-bottom: 1px solid #e3e3e3;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.filiaal img.store_thumb{
+	width: 110px;
+	float:left;
+	margin-right: 10px;
+}
+
+.filiaal p.store_name{
+    margin-top: -3px;
+
+    color: #aa1e01;
+    font-size: 18px;
+}
+
+.filiaal p.store_adress{
+    margin-top: -10px;
+    color: #000000;  font-size: 18px;
+
+}
+
+.filiaal .meer_info{
+	background: #aa1e01;
+	padding: 5px 30px;
+	width: 91px;
+	position: absolute;
+	top: 27px;
+	right: 0;
+}
+
+/**********************************************
+MAPS PANEL CONTAINER*/
+
+.maps_panel{
+	overflow: auto;
+	float: left;
+	width: 100%;
+}
+
+.maps_panel .content{
+	background: #ffffff;
+	height: 100%;
+	min-height: 115px;
+	padding: 10px;
+}
+
+
+
+/**********************************************
+ORDER LIJST*/
+
+.order_list{
+	overflow: auto;
+	float:left;
+	width: 615px;
+	position: relative;
+}
+
+.order_list .content{
+	background: #ffffff;
+	min-height: 115px;
+	padding: 10px 10px 10px 10px;
+}
+
+
+.list_container{ margin-bottom:40px;}
+
+.order_list img {height: 60px;}
+
+ul.orderlist { margin-right: 0px; padding-right: 0px; width: 485px; padding-bottom: 50px; padding-left: 0px; border-bottom: 1px solid #a1a1a1; overflow: auto; position: relative; display: inline-block;}
+
+ul.orderlist li { color: #a1a1a1; text-transform: uppercase; margin-bottom: 10px;}
+
+ul.orderlist li.underline { border-bottom: 1px solid #a1a1a1; overflow: auto; margin-bottom:10px;}
+
+ul.orderlist p{ float: left; margin-top:0px;}
+
+ul.orderlist p.product_title { width: 290px;}
+
+ul.orderlist p.amount { width: 195px; text-align: right;}
+
+.order_list .verwijderen{
+	background: #a1a1a1;
+	padding: 5px 30px;
+	position: absolute;
+	bottom: 6px;
+	right: 0px;
+}
+
+.order_list .verwijderen:hover{
+	background: #aa1e01;
+}
+
+
+/**********************************************
+TOTAAL WINKELWAGENTJE*/
+
+.total_cart{
+	overflow: auto;
+	float: left;
+	width: 270px;
+	margin-left: 70px;
+	position: relative;
+}
+
+.total_cart .content{
+	background: #ffffff;
+	height: 100%;
+	min-height: 115px;
+	padding: 0 10px 0 10px;
+}
+
+.total_cart .pay{
+	background: #aa1e01;
+	padding: 5px 30px;
+	position: absolute;
+	bottom: 22px;
+	right: 10px;
+}
+
+ul.totalcart {
+    margin-top: 0px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    overflow: auto;
+    padding-left: 0px;
+}
+
+ul.totalcart li { color: #a1a1a1; text-transform: uppercase; margin-bottom: 10px; overflow: auto;}
+
+ul.totalcart p{ float: left; margin-top:0px; width: 160px;}
+
+ul.totalcart li.underline { border-bottom: 1px solid #a1a1a1; overflow: auto; margin-bottom:10px;}
+
+
+
+/**********************************************
+TOTAAL WINKELWAGENTJE*/
+
+.samenstellen{
+	overflow: auto;
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.samenstellen .content{
+	background: #ffffff;
+	height: 100%;
+	min-height: 115px;
+	padding: 0 10px 0 10px;
+	overflow: auto;
+}
+
+
+
 
 
 /* ########################*/

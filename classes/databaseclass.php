@@ -28,9 +28,6 @@ class database extends PDO{
 		return $data;
 	}
 	
-	public function CUS()
-	{
-		//CUS = Create Unique Session	
-	}
+	
 }
 ?>

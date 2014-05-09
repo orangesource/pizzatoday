@@ -11,6 +11,8 @@ include("config/config.php");
 autoLoadClasses("databaseclass");
 autoLoadClasses("siteclass");
 autoLoadClasses("formclass");
+autoLoadClasses("sessionclass");
+autoLoadClasses("userclass");
 
 //Roep het database op
 $db = new database();
@@ -19,9 +21,8 @@ $db->startConnect(_HOST, _DB, _USER, _PASS);
 //Defineer de classes
 $siteFunctions = new siteFunctions;
 $checkForm = new checkForm($db);
-
-//$test=$db->dbInfo()->query("SELECT * FROM `cms_users`");
-//print_r($test);
+$userData = new userData($db);
+$_CUS = new CUS($db);
 
 //Pagina's in de NAV
 $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");

@@ -1,10 +1,6 @@
 <?php 
 	include_once("includes/header.php");
-	
-	//var_dump( $checkForm->checkEmail("MrYannickz@live.nl"));
-	
-	$data = $db->query("SELECT * FROM `cms_users`");
-	print_r($data);
+	echo $_SESSION['START'];
 ?>
 <script type='text/javascript'>
 $( document ).ready(function() {		
@@ -25,11 +21,11 @@ $( document ).ready(function() {
 			} else if (data.success === true){
 				$( "#msg" ).fadeIn();
 				$( "#msg" ).html(data.msg);
-				window.onload = function() {
+				/*window.onload = function() {
 					setTimeout(function() {
 						window.location = "nav.php";
 					}, 5);
-				};
+				};*/
 			
 			}
 		}
@@ -42,7 +38,7 @@ $( document ).ready(function() {
 
 <div id='wrapper_content'>
     <div class='twocolumnarea'>
-		<div class='frame location'>
+		<div class='frame'>
             <div class='infotop'>
                 Login
             </div>

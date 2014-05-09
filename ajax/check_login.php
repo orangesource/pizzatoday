@@ -4,6 +4,8 @@ session_start();
 //Haal de juiste classe op
 require "../classes/databaseclass.php";
 require "../classes/formclass.php";
+require "../classes/userclass.php";
+require "../classes/sessionclass.php";
 require "../config/config.php";
  
 //Maak de class connetie 
@@ -11,6 +13,8 @@ $db = new database();
 $db->startConnect(_HOST, _DB, _USER, _PASS);
 $checkForm = new checkForm($db);
 $checkForm->setUserdata($_POST['email'], $_POST['pass']);
+$_CUS = new CUS($db); 
+$userData = new userData($db);
  
 //Error beheer
 $ERROR = array(
@@ -38,6 +42,9 @@ if($checkForm->userNotEmpty() == false){
 }elseif($checkForm->checkPass($_POST['email']) == false){
 	echo json_encode(array('success' => false, 'data' => $_POST, 'msg' => $ERROR[5]));
 }else{
-	echo json_encode(array('success' => false, 'data' => $_POST, 'msg' => $ERROR[0]));
+	$userID = $userData->getUserID($_POST['email']);
+	$_CUS->createCUS($userData);
+	$_CUS->activateSessions($_POST['email']);
+	echo json_encode(array('success' => true, 'data' => $_POST, 'msg' => $ERROR[0]));
 }
  ?>

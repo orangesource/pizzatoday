@@ -22,7 +22,11 @@ $db->startConnect(_HOST, _DB, _USER, _PASS);
 $siteFunctions = new siteFunctions;
 $checkForm = new checkForm($db);
 $userData = new userData($db);
-$_CUS = new CUS($db);
+$sessionClass = new sessionClass($db);
+
+if($_SESSION['user_id'] != ""){
+	$userData->setUserData($_SESSION['user_id']);	
+}
 
 //Pagina's in de NAV
 $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");

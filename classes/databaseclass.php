@@ -28,6 +28,19 @@ class database extends PDO{
 		return $data;
 	}
 	
+	public function countRows($query)
+	{
+		$sth = $this->db->query($query);
+		$row_count = $sth->rowCount();
+		return $row_count;
+	}
+	public function deleteData($query)
+	{
+			$sth = $this->db->query($query);
+			return true;
+		
+	}
+	
 	
 }
 ?>

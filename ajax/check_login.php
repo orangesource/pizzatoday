@@ -13,7 +13,7 @@ $db = new database();
 $db->startConnect(_HOST, _DB, _USER, _PASS);
 $checkForm = new checkForm($db);
 $checkForm->setUserdata($_POST['email'], $_POST['pass']);
-$_CUS = new CUS($db); 
+$sessionClass = new sessionClass($db); 
 $userData = new userData($db);
  
 //Error beheer
@@ -43,8 +43,8 @@ if($checkForm->userNotEmpty() == false){
 	echo json_encode(array('success' => false, 'data' => $_POST, 'msg' => $ERROR[5]));
 }else{
 	$userID = $userData->getUserID($_POST['email']);
-	$_CUS->createCUS($userData);
-	$_CUS->activateSessions($_POST['email']);
+	$sessionClass->createCUS($userData);
+	$sessionClass->activateSessions($_POST['email']);
 	echo json_encode(array('success' => true, 'data' => $_POST, 'msg' => $ERROR[0]));
 }
  ?>

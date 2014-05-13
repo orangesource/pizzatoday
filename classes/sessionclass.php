@@ -1,9 +1,17 @@
 <?php
+<<<<<<< HEAD
 class CUS extends database{
 	//CUS = Create Unique Session
 	
 	public $session_code;
 	protected $userid;
+=======
+class sessionClass extends database{
+	//CUS = Create Unique Session
+	
+	public $session_code;
+	protected $userid, $time;
+>>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	
 	public function __construct($db)
 	{
@@ -24,6 +32,13 @@ class CUS extends database{
 		}
 		
 	 	//code
+<<<<<<< HEAD
+=======
+		
+		//Stop de huidige tijd in een variable en tel daar een kwartier bij op
+		$thetime = time() + 900;
+			
+>>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 		$query = "SELECT * FROM `store_sessions` WHERE `session_code`='".$session_code."'";
 		$data = $this->database->query($query);
 		
@@ -33,6 +48,7 @@ class CUS extends database{
 				$session_code .= $ValChars[$code];
 			}
 			
+<<<<<<< HEAD
 			$insert = "INSERT INTO `store_sessions`(`user_id`, `session_start`, `session_end`, `session_code`, `user_ip`)VALUES('1', '".time()."', '0', '".$session_code."', '".$_SERVER['REMOTE_ADDR']."')";
 			$data = $this->database->query($insert);
 		}else{
@@ -40,6 +56,16 @@ class CUS extends database{
 			$data = $this->database->query($insert);
 		}
 	}
+=======
+			$insert = "INSERT INTO `store_sessions`(`user_id`, `session_start`, `session_end`, `session_code`, `user_ip`)VALUES('1', '".time()."', '".$thetime."', '".$session_code."', '".$_SERVER['REMOTE_ADDR']."')";
+			$data = $this->database->query($insert);
+		}else{
+			$insert = "INSERT INTO `store_sessions`(`user_id`, `session_start`, `session_end`, `session_code`, `user_ip`)VALUES('1', '".time()."', '".$thetime."', '".$session_code."', '".$_SERVER['REMOTE_ADDR']."')";
+			$data = $this->database->query($insert);
+		}
+	}
+	
+>>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	public function activateSessions($user)
 	{
 		$this->user = $user;
@@ -62,5 +88,79 @@ class CUS extends database{
 			$_SESSION['IP'] = $data->user_ip;
 		}
 	}
+<<<<<<< HEAD
+=======
+	
+	public function checkSession()
+	{
+		//Haal de USER_ID van de Session binnen.
+		$this->userid = $_SESSION['USER_ID'];
+		
+		
+		if($this->userid != ""){
+		//Stel de query samen
+		$query = "SELECT * FROM `store_sessions` WHERE `user_id`='".$this->userid."'";
+		
+		//Controlleer hoeveel Rows er zijn van dit ID
+		$rows = $this->database->countRows($query);
+		
+		//Als er meer dan 1 rows is dan.
+		if($rows > 1){
+			
+			//Count de rows en trek er 1 van af zo dat hij overblijft
+			$delRows = $rows - 1;
+			
+			//Bouw de query op
+			$query = "DELETE FROM `store_sessions` ORDER BY `session_id` ASC LIMIT ".$delRows."";
+			
+			//Verbind de query met PDO
+			$this->database->deleteData($query);
+				
+		}else{
+			$data = $this->database->query($query);
+			
+			//Stop de huidige tijd in een variable
+			$thetime = time();
+			
+			// Tel een kwartier op.
+			$newtime = $data->session_end + 900;
+			
+			if($thetime > $newtime){
+				session_destroy();		
+				$loggedin = false;	
+			}else{
+				$query = "UPDATE `store_sessions` SET `session_end`='".$newtime."' WHERE `user_id`='".$this->userid."'";
+				$this->database->query($query);
+				
+				$loggedin = true;			
+			}
+			
+		}
+		
+		if($loggedin == true){
+			return true;	
+		}else{
+			return false;
+		}
+		}
+	}
+	
+	public function sessionDestroy()
+	{
+		
+		//Haal de USER_ID van de Session binnen.
+		$this->userid = $_SESSION['USER_ID'];
+		
+		//Haal de huidige sessie op
+		$query = "SELECT * FROM `store_sessions` WHERE `user_id`='".$this->userid."'";
+		$data = $this->database->query($query);
+		
+		$newQuery = "INSERT INTO `login_history`(`user_id`, `session_start`, `session_end`, `date`)VALUES('".$this->userid."', '".$data->session_start."', '".$data->session_end."','".date("Y-m-d")."')";
+		$this->database->query($newQuery);
+		
+		$delquery = "DELETE FROM `store_sessions` WHERE `user_id`='".$this->userid."'";
+		$this->database->deleteData($delquery);	
+	}
+>>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 }
 ?>

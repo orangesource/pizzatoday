@@ -6,10 +6,6 @@ ob_start();
 //Include belangrijke bestanden **Zonder deze werkt de site niet**
 include("classes/classloader.php");
 include("config/config.php");
-<<<<<<< HEAD
-
-=======
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 
 //Laad classe in
 autoLoadClasses("databaseclass");
@@ -26,15 +22,12 @@ $db->startConnect(_HOST, _DB, _USER, _PASS);
 $siteFunctions = new siteFunctions;
 $checkForm = new checkForm($db);
 $userData = new userData($db);
-<<<<<<< HEAD
 $_CUS = new CUS($db);
-=======
 $sessionClass = new sessionClass($db);
 
 if($_SESSION['user_id'] != ""){
-	$userData->setUserData($_SESSION['user_id']);	
+	$userData->setUserData($_SESSION['user_id']);
 }
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 
 //Pagina's in de NAV
 $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
@@ -69,7 +62,6 @@ $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
 			}
 		?>
 		<div class="trigger_favo">
-<<<<<<< HEAD
 			<ul class="favorite_menu"><p class="favorites">3</p>
 				<div class="favorite_info">
 					<div class="product_info">
@@ -125,7 +117,6 @@ $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
 					<p class="cart_all"><a href="#">Bekijk winkelwagen / Afrekenen</a></p>
 				</div>
 			</ul>
-=======
 			<div class="favorite_menu"><p class="favorites">3</p></div>
 			<div class="favorite_info">
 				<div class="product_info">
@@ -178,7 +169,6 @@ $pages = array("HOME","WINKELS", "PIZZA'S", "OVERIGE PRODUCTEN");
 				<p class="total_amount">&euro; 29.70</p>
 				<p class="cart_all"><a href="#">Bekijk winkelwagen / Afrekenen</a></p>
 			</div>
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 		</div>
 	</div>
 </div>

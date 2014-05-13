@@ -1,17 +1,14 @@
 <?php
 	include_once("includes/header.php");
-<<<<<<< HEAD
 	echo $_SESSION['START'];
-=======
 	$sessionClass->checkSession();
-	
+
 	if($_SESSION['USER_ID'] == ""){
 		$_SESSION['USER_ID'] = "";
 	}else{
 		$_SESSION['USER_ID'] = $_SESSION['USER_ID'];
 	}
-	
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
+
 ?>
 <script type='text/javascript'>
 $( document ).ready(function() {
@@ -28,10 +25,7 @@ $( document ).ready(function() {
 			if(data.success === false){
 				$( "#msg" ).fadeIn();
 				$( "#msg" ).html(data.msg);
-<<<<<<< HEAD
 
-=======
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 			} else if (data.success === true){
 				$( "#msg" ).fadeIn();
 				$( "#msg" ).html(data.msg);
@@ -40,23 +34,16 @@ $( document ).ready(function() {
 						window.location = "nav.php";
 					}, 5);
 				};*/
-<<<<<<< HEAD
 
 			}
 		}
 	});
 
-=======
-			}
-		}
-	});
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	return false;
 	});
 });
 </script>
 <div id='wrapper_content'>
-<<<<<<< HEAD
     <!-- <div class='twocolumnarea'>
 		<div class='frame'>
             <div class='infotop'>Login</div>
@@ -86,7 +73,6 @@ $( document ).ready(function() {
 		</div>
 	</div>
 	<div class='clearfix'></div>
-=======
 <?php
 	if($sessionClass->checkSession() == true){
 ?>
@@ -96,11 +82,11 @@ $( document ).ready(function() {
             U bent ingelogd als
         </div>
         <div class='contentarea'>
-			 Welkom            
+			 Welkom
         </div>
     </div>
 </div>
-<div class='clearfix'></div>        
+<div class='clearfix'></div>
 <?php
 	}else{
 ?>
@@ -121,10 +107,9 @@ $( document ).ready(function() {
     </div>
 </div>
 <div class='clearfix'></div>
-<?php 
+<?php
 	}
 ?>
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 </div>
 <?php
 	include_once("includes/footer.php");

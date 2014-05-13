@@ -5,26 +5,26 @@
     <!-- Filiaal zoeken -->
 	<div class="filiaal_zoeken">
 		<div class="infotop">FILIAAL ZOEKEN</div>
-<<<<<<< HEAD
+
 		<div class="content">
 			<form action="" method="POST">
 				<input type="text" name="filiaal_invoer" >
 				<input type="submit" name="filiaal_zoeken" value="ZOEKEN">
 			</form>
 		</div>
-=======
+
 			<div class="content">
 				<form action="" method="POST">
 					<input type="text" name="filiaal_invoer" >
 					<input type="submit" name="filiaal_zoeken" value="ZOEKEN">
 				</form>
 			</div>
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
+
 	</div>
 
 	<div class="filiaal_info">
 		<div class="infotop">GEVONDEN FILIALEN</div>
-<<<<<<< HEAD
+
 		<div class="content">
 			<div class="filiaal">
 				<img class="store_thumb" src="img/stores/store.png"/>
@@ -52,15 +52,12 @@
 		</div>
 	</div>
 
-
-=======
 			<div class="content">
 
 			</div>
 	</div>
 
     <div class='clearfix'></div>
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 
 </div>
 <?php

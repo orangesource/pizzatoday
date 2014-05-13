@@ -9,7 +9,6 @@ p.melding{
 	line-height: 1 !important;
 }
 
-<<<<<<< HEAD
 .underline { border-bottom: 1px solid #a1a1a1;}
 
 .mb20 {margin-bottom: 20px;}
@@ -21,9 +20,6 @@ p.melding{
 .tl {text-align: left;}
 
 
-
-=======
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 /* THE BASICS */
 body{
 	background-color: #e3e3e3;
@@ -182,7 +178,6 @@ p.tot_amount{
 	text-decoration: none;
 }
 
-<<<<<<< HEAD
 /************************************************
 FAVORITE MENU*/
 
@@ -194,18 +189,15 @@ ul.favorite_menu{
 .favorite_menu{
 	width: 55px;
 	height: 55px;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	float:right;
 	background: url("../img/favorite.png") no-repeat scroll 6px 4px transparent;
 	background-size: 80%;
 	border-left:1px solid #d22400;
 }
 
-<<<<<<< HEAD
 ul.favorite_menu:hover{
 =======
 .favorite_menu:hover{
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	background-color: #9c1a00;
 }
 
@@ -222,7 +214,6 @@ ul.favorite_menu:hover{
 	display:none;
 }
 
-<<<<<<< HEAD
 
 .trigger_favo:hover .favorite_info{
 	display: block;
@@ -230,7 +221,6 @@ ul.favorite_menu:hover{
 =======
 .trigger_favo:hover .favorite_info{
 	display: block;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 }
 
 .favorite_info .product_info {
@@ -289,7 +279,6 @@ p.fav_price {
 	color: #ffffff;
 }
 
-<<<<<<< HEAD
 /***************************************************
 CART MENU*/
 
@@ -299,14 +288,12 @@ ul.cart_menu{
 	float:right;
 	margin-top:0px;
 	background: url("../img/cart.png") no-repeat scroll 15px 18px transparent;
-=======
 
 .cart_menu{
 	width: 55px;
 	height: 55px;
 	float:right;
 	background: url("../img/cart.png") no-repeat scroll 11px 16px transparent;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	background-size: 55%;
 	border-right:1px solid #981a00;
 }
@@ -348,12 +335,10 @@ p.favorites{
 	font-weight: bold;
 	color: #9c1a00;
 	cursor: context-menu;
-=======
 	margin-left:23px;
 	margin-top:20px;
 	font-weight: bold;
 	color: #9c1a00;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 }
 
 p.cart_all{
@@ -373,9 +358,7 @@ p.cart_amount{
 	font-size: 11px;
 <<<<<<< HEAD
 	margin-left: -10px;
-=======
 	margin-left: 32px;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 	margin-top: 8px;
 	text-align: center;
 	font-weight: bold;
@@ -385,10 +368,7 @@ p.cart_amount{
 	padding: 1px;
 	border-radius: 8px;
 	height: 14px;
-<<<<<<< HEAD
 	cursor: context-menu;
-=======
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 }
 
 
@@ -623,11 +603,8 @@ FILIAAL ZOEKEN*/
 .filiaal_zoeken .content{
 	background: #ffffff;
 	min-height: 115px;
-<<<<<<< HEAD
 	padding: 10px;
-=======
 	padding: 20px 20px 20px 20px;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 }
 
 input[name="filiaal_invoer"]{
@@ -641,18 +618,14 @@ FILIAAL INFO*/
 	overflow: auto;
 	float: left;
 	width: 628px;
-<<<<<<< HEAD
 	margin-left: 70px;
-=======
 	margin-left: 50px;
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
 }
 
 .filiaal_info .content{
 	background: #ffffff;
 	height: 100%;
 	min-height: 115px;
-<<<<<<< HEAD
 	padding: 0 10px 0 10px;
 }
 
@@ -818,22 +791,6 @@ TOTAAL WINKELWAGENTJE*/
 	padding: 0 10px 0 10px;
 	overflow: auto;
 }
-=======
-	padding: 20px 20px 20px 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 6960a91d2bcfc7916b7411b7f5207f75cbb237b7
-
 
 
 
